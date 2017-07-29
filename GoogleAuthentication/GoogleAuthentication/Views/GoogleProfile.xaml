@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:ctrl="clr-namespace:GoogleAuthentication;assembly=GoogleAuthentication"
+             x:Class="GoogleAuthentication.Views.GoogleProfile">
+    <ContentPage.Content>
+        <StackLayout Margin="0,20,0,0" Orientation="Vertical">
+            <StackLayout>
+                <controls:CircleImage
+                Margin="10,0,0,0"
+                Aspect="AspectFit"
+                HorizontalOptions="Center"
+                Source="{x:Static ctrl:App.ImageUser}"
+                VerticalOptions="FillAndExpand">
+                    <controls:CircleImage.WidthRequest>
+                        <OnPlatform
+                        x:TypeArguments="x:Double"
+                        Android="95"
+                        WinPhone="75"
+                        iOS="55" />
+                    </controls:CircleImage.WidthRequest>
+                    <controls:CircleImage.HeightRequest>
+                        <OnPlatform
+                        x:TypeArguments="x:Double"
+                        Android="95"
+                        WinPhone="75"
+                        iOS="55" />
+                    </controls:CircleImage.HeightRequest>
+                </controls:CircleImage>
+            </StackLayout>
+            <StackLayout>
+                <Label
+                FontSize="Medium"
+                HorizontalOptions="CenterAndExpand"
+                Text="{x:Static ctrl:App.UserName}"
+                TextColor="Black"
+                VerticalOptions="FillAndExpand" />
+                <BoxView
+                HeightRequest="2"
+                HorizontalOptions="FillAndExpand"
+                Color="Black" />
+            </StackLayout>
+            <StackLayout>
+                <Label
+                FontSize="Medium"
+                HorizontalOptions="CenterAndExpand"
+                Text="{x:Static ctrl:App.Occupation}"
+                TextColor="Black"
+                VerticalOptions="FillAndExpand" />
+                <BoxView
+                HeightRequest="2"
+                HorizontalOptions="FillAndExpand"
+                Color="Black" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
